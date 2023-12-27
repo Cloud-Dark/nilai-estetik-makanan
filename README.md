@@ -2,6 +2,23 @@
 
 Ini adalah script Python untuk mengevaluasi estetika gambar menggunakan model NASNetLarge. Skrip ini memproses beberapa gambar dan mengurutkannya berdasarkan nilai estetika dari yang terbesar hingga terkecil.
 
+## Cara kerja NASNetLarge
+NASNetLarge adalah salah satu model arsitektur jaringan saraf konvolusi (Convolutional Neural Network/CNN) yang dirancang khusus untuk tugas pengenalan gambar. Model ini dikembangkan oleh Google Brain dan menggunakan pendekatan desain neural arsitektur pencarian (Neural Architecture Search/NAS) untuk mencapai performa yang tinggi dalam tugas klasifikasi gambar.
+
+Berikut adalah beberapa langkah utama dalam cara kerja NASNetLarge:
+
+1. Neural Architecture Search (NAS): NASNetLarge menggunakan pendekatan NAS untuk mencari arsitektur jaringan saraf yang optimal. Proses ini melibatkan pencarian otomatis dari berbagai arsitektur kandidat, di mana arsitektur-arsitektur ini dihasilkan dan dievaluasi secara otomatis untuk menemukan yang terbaik.
+
+2. Struktur blok sel: NASNetLarge menggunakan struktur blok sel yang berulang untuk membangun arsitektur jaringan saraf. Blok sel adalah unit dasar yang terdiri dari beberapa operasi pengolahan gambar yang saling terhubung. Setiap blok sel memiliki beberapa cabang yang memungkinkan jaringan untuk mempelajari pola-pola yang berbeda secara paralel.
+
+3. Skip connections: NASNetLarge juga menggunakan koneksi melompat (skip connections) antara blok-blok sel. Koneksi melompat ini memungkinkan aliran informasi langsung dari lapisan yang lebih awal ke lapisan yang lebih dalam dalam jaringan, memungkinkan jaringan untuk mengakses representasi-fitur yang lebih kaya.
+
+4. Preprocessing: Sebelum gambar dimasukkan ke dalam NASNetLarge, gambar-gambar tersebut diubah ukurannya agar sesuai dengan ukuran input yang diharapkan oleh model. Selanjutnya, gambar-gambar tersebut juga dipreproses menggunakan fungsi preprocess_input yang dapat mengubah nilai piksel menjadi skala yang sesuai dan menerapkan normalisasi yang diperlukan.
+
+5. Training dan Inferensi: Setelah arsitektur jaringan NASNetLarge dibangun, model tersebut dapat dilatih menggunakan data latih yang berlabel. Data latih tersebut digunakan untuk menyesuaikan bobot-bobot (weights) model agar dapat melakukan klasifikasi dengan akurasi yang tinggi. Setelah dilatih, model dapat digunakan untuk melakukan inferensi pada gambar-gambar baru, di mana model akan memberikan prediksi kelas untuk setiap gambar.
+
+NASNetLarge memiliki tingkat akurasi yang tinggi dalam tugas pengenalan gambar dan telah digunakan secara luas dalam berbagai aplikasi komputer visi. Namun, penting untuk diingat bahwa implementasi dan performa model dapat bervariasi tergantung pada kerangka kerja (framework) dan pengaturan yang digunakan.
+
 ## Persyaratan
 - Python 3.x
 - Library yang dibutuhkan:
@@ -28,19 +45,4 @@ Gambar-gambar ditampilkan dalam subplot 2x2 dengan urutan sesuai dengan nilai es
 
 Silakan mencoba skrip ini dengan gambar-gambar Anda sendiri untuk mengevaluasi estetika mereka menggunakan model NASNetLarge.
 
-## Cara kerja NASNetLarge
-NASNetLarge adalah salah satu model arsitektur jaringan saraf konvolusi (Convolutional Neural Network/CNN) yang dirancang khusus untuk tugas pengenalan gambar. Model ini dikembangkan oleh Google Brain dan menggunakan pendekatan desain neural arsitektur pencarian (Neural Architecture Search/NAS) untuk mencapai performa yang tinggi dalam tugas klasifikasi gambar.
 
-Berikut adalah beberapa langkah utama dalam cara kerja NASNetLarge:
-
-1. Neural Architecture Search (NAS): NASNetLarge menggunakan pendekatan NAS untuk mencari arsitektur jaringan saraf yang optimal. Proses ini melibatkan pencarian otomatis dari berbagai arsitektur kandidat, di mana arsitektur-arsitektur ini dihasilkan dan dievaluasi secara otomatis untuk menemukan yang terbaik.
-
-2. Struktur blok sel: NASNetLarge menggunakan struktur blok sel yang berulang untuk membangun arsitektur jaringan saraf. Blok sel adalah unit dasar yang terdiri dari beberapa operasi pengolahan gambar yang saling terhubung. Setiap blok sel memiliki beberapa cabang yang memungkinkan jaringan untuk mempelajari pola-pola yang berbeda secara paralel.
-
-3. Skip connections: NASNetLarge juga menggunakan koneksi melompat (skip connections) antara blok-blok sel. Koneksi melompat ini memungkinkan aliran informasi langsung dari lapisan yang lebih awal ke lapisan yang lebih dalam dalam jaringan, memungkinkan jaringan untuk mengakses representasi-fitur yang lebih kaya.
-
-4. Preprocessing: Sebelum gambar dimasukkan ke dalam NASNetLarge, gambar-gambar tersebut diubah ukurannya agar sesuai dengan ukuran input yang diharapkan oleh model. Selanjutnya, gambar-gambar tersebut juga dipreproses menggunakan fungsi preprocess_input yang dapat mengubah nilai piksel menjadi skala yang sesuai dan menerapkan normalisasi yang diperlukan.
-
-5. Training dan Inferensi: Setelah arsitektur jaringan NASNetLarge dibangun, model tersebut dapat dilatih menggunakan data latih yang berlabel. Data latih tersebut digunakan untuk menyesuaikan bobot-bobot (weights) model agar dapat melakukan klasifikasi dengan akurasi yang tinggi. Setelah dilatih, model dapat digunakan untuk melakukan inferensi pada gambar-gambar baru, di mana model akan memberikan prediksi kelas untuk setiap gambar.
-
-NASNetLarge memiliki tingkat akurasi yang tinggi dalam tugas pengenalan gambar dan telah digunakan secara luas dalam berbagai aplikasi komputer visi. Namun, penting untuk diingat bahwa implementasi dan performa model dapat bervariasi tergantung pada kerangka kerja (framework) dan pengaturan yang digunakan.
