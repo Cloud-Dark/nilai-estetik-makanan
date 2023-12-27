@@ -23,5 +23,5 @@ Hasilnya akan ditampilkan dalam bentuk subplot dengan susunan 2x2. Setiap gambar
 
 ## Contoh Hasil
 Berikut adalah contoh hasil yang dapat Anda harapkan dari skrip ini:
-
+![](hasil.png)
 Gambar-gambar ditampilkan dalam subplot 2x2 dengan urutan sesuai dengan nilai estetika. Setiap gambar juga dilengkapi dengan teks yang menunjukkan urutan dan nilai estetika.Silakan mencoba skrip ini dengan gambar-gambar Anda sendiri untuk mengevaluasi estetika mereka menggunakan model NASNetLarge.
